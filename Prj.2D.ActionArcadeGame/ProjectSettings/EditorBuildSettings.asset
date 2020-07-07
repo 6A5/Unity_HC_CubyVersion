@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: cdace376792acf848b8256d086ca199a
+  - enabled: 1
+    path: Assets/Scenes/Highland/Highland1.unity
+    guid: e9dc374f7fea3ca4b99ff162def2833e
+  - enabled: 1
+    path: Assets/Scenes/Highland/Highland2.unity
+    guid: 2c34738eaffa19147bfba19b8b6dd23b
+  - enabled: 1
+    path: Assets/Scenes/Cave/Cave1.unity
+    guid: 0b91066f5120e704b943e86d56da84d4
+  - enabled: 1
+    path: Assets/Scenes/Cave/Cave2.unity
+    guid: 89af019772e3e7d48bd2564c71960f84
+  - enabled: 1
+    path: Assets/Scenes/Lab/Lab1.unity
+    guid: 44dcd80796611c941b6c7d4a16614a4a
+  - enabled: 1
+    path: Assets/Scenes/Lab/Boss.unity
+    guid: bb13464adbbd6ec4ebb53dbb96325a42
+  m_configObjects: {}
