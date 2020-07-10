@@ -126,7 +126,7 @@ public class PlayerControl : MonoBehaviour, IDamageable
             float moveInput = Input.GetAxisRaw("Horizontal");
             m_rg2d.velocity = new Vector2(speed * moveInput, m_rg2d.velocity.y);
 
-#elif (UNITY_IOS || UNITY_ANDROID)
+        #elif (UNITY_IOS || UNITY_ANDROID)
             // Android
             float move;
             move = Input.acceleration.x * 2f;
@@ -138,9 +138,11 @@ public class PlayerControl : MonoBehaviour, IDamageable
 
             m_rg2d.velocity = new Vector2(speed * move, m_rg2d.velocity.y);
 
-#endif
+        #elif UNITY_WEBGL
+            float moveInput = Input.GetAxisRaw("Horizontal");
+            m_rg2d.velocity = new Vector2(speed * moveInput, m_rg2d.velocity.y);
 
-        Debug.Log(m_rg2d.velocity);
+        #endif
     }
 
     void Flip()
@@ -165,6 +167,18 @@ public class PlayerControl : MonoBehaviour, IDamageable
                 transform.rotation = Quaternion.Euler(0, 0, 0);
             }
             if (Input.acceleration.x < 0)
+            {
+                facingRight = false;
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
+
+        #elif UNITY_WEBGL
+            if (Input.GetAxisRaw("Horizontal") > 0)
+            {
+                facingRight = true;
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            if (Input.GetAxisRaw("Horizontal") < 0)
             {
                 facingRight = false;
                 transform.rotation = Quaternion.Euler(0, 180, 0);

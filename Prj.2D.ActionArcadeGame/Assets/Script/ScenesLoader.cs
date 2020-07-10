@@ -62,4 +62,9 @@ public class ScenesLoader : MonoBehaviour
 
         chosenStage.text = loadSceneName;
     }
+
+    public void OpLoad()
+    {
+        SceneManager.LoadScene("OP");
+    }
 }

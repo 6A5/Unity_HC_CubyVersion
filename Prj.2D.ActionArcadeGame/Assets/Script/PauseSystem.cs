@@ -38,13 +38,19 @@ public class PauseSystem : MonoBehaviour
             gS = GameState.Going;
             Time.timeScale = 1;
             pauseUI.GetComponent<CanvasGroup>().alpha = 0;
+            pauseUI.GetComponent<CanvasGroup>().interactable = false;
         }
         else if (gS == PauseSystem.GameState.Going)
         {
             gS = GameState.Pause;
             Time.timeScale = 0;
             pauseUI.GetComponent<CanvasGroup>().alpha = 1;
+            pauseUI.GetComponent<CanvasGroup>().interactable = true;
         }
     }
 
+    public void TimeScaleToOne()
+    {
+        Time.timeScale = 1;
+    }
 }
